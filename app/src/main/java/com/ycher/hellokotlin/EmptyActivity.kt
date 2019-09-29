@@ -14,9 +14,11 @@ import androidx.appcompat.app.AppCompatActivity
 
 class EmptyActivity : AppCompatActivity() {
 
-    val TAG = "EmptyActivity"
+    companion object {
+        const val TAG = "EmptyActivity"
+    }
 
-    lateinit var tvNonEmpty: TextView
+    private lateinit var tvNonEmpty: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +28,9 @@ class EmptyActivity : AppCompatActivity() {
         empty(tvNonEmpty)
     }
 
-    fun empty(v: View?) {
+    private fun empty(v: View?) {
         val string = v.toString()
-        Log.i(TAG, "View? id is " + string)
+        Log.i(TAG, "View? id is $string")
         tvNonEmpty.text = string
     }
 }
